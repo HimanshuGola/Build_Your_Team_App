@@ -1,0 +1,148 @@
+/* .card{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "avatar name name name name"
+                       "avatar domain domain domain domain"
+                       "gender gender gender gender gender"
+                       "email email email email email"
+                       "avail avail avail avail avail";
+  justify-items: stretch;
+  align-items: stretch;
+
+  max-width: 350px;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px 1px rgb(0 0 0 / 25%);
+  background-color: greenyellow;
+}
+
+.card > img {
+  grid-area: avatar;
+  place-self: center;
+  background-color: red;
+}
+
+.card > h3{
+  grid-area: name;
+  background-color: blueviolet;
+  font-size: 1.25rem;
+  padding: 1em 1.125em;
+}
+
+.card > h4{
+  grid-area: domain;
+  background-color: skyblue;
+  font-size: 0.95rem;
+  padding: 1.25em;
+}
+
+.card > p.gender{
+  grid-area: gender;
+  background-color: ivory;
+  padding: 1.25em 1em 1.25em 5.125em;
+}
+
+.card > p.email{
+  grid-area: email;
+  background-color: orchid;
+  padding: 1.25em 1em 1.25em 5.125em;
+}
+
+.card > p.avail{
+  grid-area: avail;
+  background-color: lightcoral;
+  padding: 1.25em 1em 1.25em 5.125em;
+} */
+
+.card{
+  --just-cont: start;
+  --gap: 1.5rem;
+  /* background: yellow; */
+  width: 325px;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  border-top: 5px solid green;
+  box-shadow: 0 10px 10px 1px rgb(0 0 0 / 25%);
+}
+
+.card-busy{
+  border-top: 5px solid red;
+}
+
+.card > img{
+  align-self: start;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+}
+
+.card > img.added-img-border{
+  border-color: green;
+}
+
+.personInfo{
+  --flex-dir: column;
+  --just-cont: center;
+  --algn-itms: stretch;
+  /* --gap: 0.75rem; */
+
+  flex: 1;
+  padding-block: 0.5rem;
+}
+
+.personInfo > h3{
+  /* text-transform: uppercase; */
+}
+
+.personInfo > h4{
+  color: blue;
+}
+
+.personInfo > p{
+  color: #6e6e6e;
+  font-size: 0.875rem;
+}
+
+p.avail{
+  color: green;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+p.busy{
+  color: red;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.personInfo > button{
+  font-size: 0.95rem;
+  padding: 0.65em 0.75em;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.activeBtn{
+  background-color: #ffcf24;
+  cursor: pointer;
+}
+
+.activeBtn:hover{
+  background-color: #ffc800;
+}
+
+.present{
+  color: white;
+  background-color: #d50707;
+  cursor: pointer;
+}
+
+.present:hover{
+  background-color: #ae0404; 
+}
+
+.inactiveBtn{
+  background-color: #e0e0e0;
+}

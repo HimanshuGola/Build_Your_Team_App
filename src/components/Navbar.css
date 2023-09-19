@@ -1,0 +1,125 @@
+.navbar{
+  padding: 1.5em 2em;
+  background-color: #202e56;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.main-nav{
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+h1{
+  letter-spacing: 1px;
+  color: #ffbe4d;
+}
+
+h1 > span{
+  font-size: 0.875em;
+  color: white;
+}
+
+ul{
+  list-style: none;
+}
+
+.link-group{
+  --gap: 4rem;
+}
+
+.link-group > li{
+  position: relative;
+}
+
+.link-group > li > a{
+  padding: 0.5em 0.875em;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+}
+
+.link-group > li > a:hover{
+  background-color: #e9f3fb;
+  color: #202e56;
+}
+
+.link-group > li > .active{
+  color: #f3c875;
+}
+
+.memberCount{
+  display: grid;
+  place-content: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 2em;
+  transform: translate(50%, -50%);
+  font-size: 0.65em;
+  text-align: center;
+  color: blue;
+}
+
+.memberCount::before{
+  position: absolute;
+  content: "";
+  top: 0;
+  rigth: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, -25%);
+  width: 2em;
+  aspect-ratio: 1;
+  z-index: -1;
+  
+  background-color: white;
+  border-radius: 50%;
+}
+
+@media (max-width: 450px){
+  .navbar{
+    font-size: 1rem;
+    padding: 1.35em 1em;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  
+  .link-group{
+    --gap: 0.75rem;
+    font-size: 0.875rem;
+  }
+/* 
+  .link-group > li > a:hover{
+    background: none;
+    color: white;
+  }
+  
+  .link-group > li > .active{
+    color: #f3c875;
+  } */
+}
+
+@media (min-width: 451px) and (max-width: 600px){
+  .navbar{
+    font-size: 1.25rem;
+    padding: 1.35em 1em;
+  }
+  h1{
+    font-size: 1.25rem;
+  }
+
+  .link-group{
+    --gap: 0.875rem;
+    font-size: 1rem;
+  }
+}

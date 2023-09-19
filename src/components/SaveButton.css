@@ -1,0 +1,13 @@
+.saveBtn{
+  padding: 0.5em 1.45em;
+  border: none;
+  border-radius: 1em;
+  background-color: #2a2ae5;
+  color: white;
+  cursor: pointer;
+}
+
+.saved{
+  background-color: green;
+  pointer-events: none;
+}

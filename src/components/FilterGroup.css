@@ -1,0 +1,116 @@
+.filter-group{
+  --gap: 0.75rem;
+  --just-cont: center;
+  --algn-itms: center;
+  flex-wrap: wrap;
+}
+
+/* For Select Elements */
+
+.filter-domain, .filter-gender{
+  --clr: #f5fbff;
+  position: relative;
+}
+
+select{
+  font-size: 1rem;
+  padding: 0.65em 1.5em 0.65em 0.75em;
+  /* appearance: none; */
+  width: 100%;
+  background-color: #3131b4;
+  color: var(--clr);
+  border: 0;
+  border-radius: .25em;
+}
+
+select:focus{
+  outline-color: #ffb8b8;
+  outline-offset: 1px;
+}
+
+.custom-arrow-container{
+  --size: 0.35em;
+  display: block;
+  position: absolute;
+  width: 2em;
+  height: 100%;
+  background: #222281;
+  border-radius: 0 .25em .25em 0;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.custom-arrow-container::before,
+.custom-arrow-container::after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+}
+
+.custom-arrow-container::before{
+  top: 40%;
+  border-bottom: var(--size) solid var(--clr);
+}
+
+.custom-arrow-container::after{
+  top: 60%;
+  border-top: var(--size) solid var(--clr);
+}
+
+@media (max-width: 600px){
+  select{
+    font-size: 0.875rem;
+  }
+}
+
+/* For checkboxes */
+
+.filter-busy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+
+  background-color: #dedede;
+  padding: 0.65em 0.75em;
+  border-radius: .25em;
+}
+
+input#chckbxID{
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  /* border: 1px solid blue; */
+  outline: 2px solid #1515d5;
+  outline-offset: 1px;
+}
+
+input#chckbxID:checked{
+  background-color: #fbbf50;
+  background-image: url("../icons/check-solid.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 600px){
+  .filter-busy{
+    --gap: 0.35rem;
+  }
+
+  input#chckbxID{
+    width: 0.875em;
+    height: 0.875em;
+  }
+  
+  input#chckbxID + label{
+    font-size: 0.875rem;
+  }
+}

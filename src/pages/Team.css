@@ -1,0 +1,77 @@
+.teamPage-main{
+  --flex-dir: column;
+  --just-cont: center;
+  --algn-itms: center;
+  --gap: 1.5rem;
+  margin-block: 3rem;
+  margin-top: 7rem;
+}
+
+.cartContainer{
+  --flex-dir: column;
+  --algn-itms: stretch;
+  --just-cont: center;
+  --gap: 1.5rem;
+
+  padding: 1.5rem;
+  max-width: 700px;
+  width: 97%;
+  margin-inline: auto;
+  /* margin-block: 3rem; */
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+
+.emptyCart{
+  max-width: 650px;
+  width: 90%;
+  margin-inline: auto;
+  padding: 2em 3.5em;
+  border: 1px solid #a6a6a6;
+  border-radius: 1rem;
+  outline: 2px solid gray;
+  outline-offset: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #5c5c5c;
+}
+/* 
+.saveBtn{
+  padding: 0.5em 1.45em;
+  border: none;
+  border-radius: 1em;
+  background-color: #2a2ae5;
+  color: white;
+  cursor: pointer;
+}
+
+.saved{
+  background-color: green;
+  pointer-events: none;
+} */
+
+@media (max-width: 450px){
+  main{
+    margin-top: 5.5rem;
+  }
+  .cartContainer{
+    padding: 0.75rem;
+  }
+
+  .emptyCart{
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 600px){
+  main{
+    margin-top: 5.5rem;
+  }
+  .cartContainer{
+    padding: 1rem;
+  }
+
+  .emptyCart{
+    font-size: 1.25rem;
+  }
+}

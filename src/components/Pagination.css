@@ -1,0 +1,71 @@
+.paginationGroup{
+  --gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.paginationGroup > li > button{
+  padding: 1em;
+  width: 3em;
+  aspect-ratio: 1;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #0000bd;
+}
+
+
+.paginationGroup > li > button:hover{
+  background-color: #dbdeff;
+}
+
+.paginationGroup > li > button > img{
+  position: relative;
+  width: 80%;
+  aspect-ratio: 1;
+  margin: auto;
+  filter: invert(11%) sepia(88%) saturate(7230%) hue-rotate(246deg) brightness(67%) contrast(139%);
+}
+
+.paginationGroup > li > button.currentPage{
+  background-color: #4337e1;
+  color: white;
+}
+
+.paginationGroup > li > button.disabledArrow:hover{
+  background: none;
+  cursor: auto;
+}
+
+.paginationGroup > li > button.disabledArrow > img{
+  filter: invert(87%) sepia(13%) saturate(6%) hue-rotate(358deg) brightness(85%) contrast(83%);
+}
+
+@media (min-width: 475px) and (max-width: 600px){
+  .paginationGroup{
+    --gap: 0.5rem;
+  }
+
+  .paginationGroup > li > button{
+    font-size: 0.875rem;
+  }
+
+  .paginationGroup > li > button > img{
+    width: 90%;
+  }
+}
+
+@media (max-width: 474px){
+    .paginationGroup{
+    --gap: 0.125rem;
+  }
+
+  .paginationGroup > li > button{
+    font-size: 0.75rem;
+  }
+
+  .paginationGroup > li > button > img{
+    width: 100%;
+  }
+}

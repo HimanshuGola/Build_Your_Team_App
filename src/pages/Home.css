@@ -1,0 +1,33 @@
+.mainHome{
+  --flex-dir: column;
+  --just-cont: start;
+  --algn-itms: center;
+  --gap: 2rem;
+
+  margin-block: 3rem;
+  margin-top: 7.5rem;
+}
+
+.card-array{
+  --gap: 2.5rem;
+  --just-cont: center;
+  --algn-itms: center;
+  
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+.loading{
+  color: #f5ae14;
+}
+
+.noEmployee{
+  color: #07077d;
+}
+
+@media (max-width: 600px){
+  .mainHome{
+    margin-top: 5.5rem;
+  }
+}
