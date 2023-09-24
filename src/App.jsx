@@ -12,8 +12,7 @@ import server from "./api/server.js"
 export default function App() {
   const dispatch = useDispatch();
   const currentPage = useSelector(currentPageSelector);
-  const location = useLocation()
-  console.log(location)
+  const location = useLocation();
   
   useEffect(() => {
     let ignore = false;

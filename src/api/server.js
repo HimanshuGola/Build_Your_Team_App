@@ -1,8 +1,7 @@
 import { createServer, Model } from "miragejs";
-import testArray from "../heliverse_mock_data"
+import testArray from "../heliverse_mock_data.js"
 
-const myDataFromLS = JSON.parse(localStorage.getItem("myData"))
-const myTeamFromLS = myDataFromLS ? myDataFromLS.myTeam : []
+const myTeamFromLS = JSON.parse(localStorage.getItem("myData")).myTeam || []
 
 export default createServer({
   models: {
@@ -31,7 +30,20 @@ export default createServer({
     this.get("/employees/:currentPage", (schema, request) => {
       const currentPage = request.params.currentPage
       const queryParams = request.queryParams
-      const data = schema.employees.where(queryParams)
+      console.log(queryParams.name)
+      let data = []
+      if(!queryParams.name){
+        data = schema.employees.where(queryParams)
+      }
+      else{
+        const searchObj = {...queryParams}
+        const nameVal = searchObj.name
+        delete searchObj.name
+        console.log(searchObj, nameVal)
+        data = schema.employees.where(searchObj)
+        data = data.filter(emp => `${emp.first_name} ${emp.last_name}`.toLowerCase().includes(nameVal.toLowerCase()))
+        console.log(data)
+      }
       const mockDataLen = data.length
       const start = mockDataLen > 20 ? currentPage*20 - 20 : 0
       const end = mockDataLen > 20 ? currentPage*20 : mockDataLen
@@ -40,7 +52,19 @@ export default createServer({
 
     this.get("/filteredArraySize", (schema, request) => {
       const queryParams = request.queryParams
-      const data = schema.employees.where(queryParams)
+      let data = []
+      if(!queryParams.name){
+        data = schema.employees.where(queryParams)
+      }
+      else{
+        const searchObj = {...queryParams}
+        const nameVal = searchObj.name
+        delete searchObj.name
+        console.log(searchObj, nameVal)
+        data = schema.employees.where(searchObj)
+        data = data.filter(emp => `${emp.first_name} ${emp.last_name}`.toLowerCase().includes(nameVal.toLowerCase()))
+        console.log(data)
+      }
       return data.length
     })
 

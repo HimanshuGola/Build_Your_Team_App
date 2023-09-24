@@ -15,19 +15,17 @@ export default function Home(){
 
   function handleSearchParams(key, newValue){
     if (newValue === null || newValue === ""){
-      const replaceVal = (key === "name")
       setSearchParams(prevSearchParams => {
         prevSearchParams.delete(key);
         return prevSearchParams
-      }, {replace: replaceVal})
+      })
     }
     else if(key === "name"){
-      const prevNameValue = searchParams.get("name")
-      const replaceValue = !(prevNameValue === null);
+      const prevNameValue = searchParams.get("name");
       setSearchParams(prevSearchParams => {
         prevSearchParams.set(key, newValue)
         return prevSearchParams
-      }, {replace: replaceValue})
+      })
     }
     else{
       setSearchParams(prevSearchParams => {
@@ -51,9 +49,14 @@ export default function Home(){
         />
       {
         isLoading ?
-        <h1 className="loading">Loading...</h1> :
+        <div className="loading-spinner">
+          Loading...
+          <div className="spinner-section-1"></div>
+          <div className="spinner-section-2"></div>
+          <div className="spinner-section-3"></div>
+        </div> :
         dataArray.length === 0 ?
-        <h1 className="noEmployee">No Employee :(</h1> :
+        <div className="noEmployee">No employee found :(</div> :
         <div className="flex-group card-array">
           {
             dataArray.map(person => <Card key={person.id} personObj={person} />)

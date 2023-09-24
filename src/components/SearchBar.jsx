@@ -1,18 +1,16 @@
+import { useState } from "react";
 import searchIcon from "../icons/search-icon.svg"
 import "./SearchBar.css"
 
 export default function SearchBar({searchParams, handleChangeParams}){
-  const inputValue = searchParams.get("name");
-  
+  const [inputValue, setInputValue] = useState(searchParams.get("name"));
   return(
     <form className="flex-group searchBarCont">
         <input 
           type="text" 
           placeholder="Search by name..."
           value={inputValue === null ? "" : inputValue}
-          onChange={(e)=> {
-            handleChangeParams("name", e.target.value)
-          }}
+          onChange={(e) => setInputValue(e.target.value)}
           />
         <button
           type="submit"

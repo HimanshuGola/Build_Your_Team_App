@@ -30,7 +30,7 @@ export default function Card({personObj}){
           {personObj.gender}
         </p>
         <p className="email">
-          {personObj.email}
+          {personObj.email.length > 28 ? `${personObj.email.slice(0, 28)}...` : personObj.email}
         </p>
         <p className={availClass}>
           {personObj.available ? "Available" : "Busy"}
