@@ -1,7 +1,7 @@
 import { createServer, Model } from "miragejs";
 import testArray from "../heliverse_mock_data.js"
 
-const myTeamFromLS = JSON.parse(localStorage.getItem("myData")).myTeam || []
+const myTeamFromLS = JSON.parse(localStorage.getItem("myData")) ? JSON.parse(localStorage.getItem("myData")).myTeam : []
 
 export default createServer({
   models: {
